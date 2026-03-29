@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma: Exercise 01
+
+---
+
+# Agenda
+
+1. What do we want to send?
+2. What restrictions do we have?
+3. Python functions
+4. Preparing a message
+5. Testing your code
+6. Committing your code
+
+---
+
+# What do we want to send?
+
+We want to send a *message* using Enigma. This can be any arbitrary
+text. To start with we will want to send a short simple message "Hello
+world".
+
+---
+
+# Restrictions
+
+The Enigma keyboard has 26 keys to enter a message - the 26 uppercase
+characters of the latin alphabet.
+
+Before we pass the message into Enigma, we must transform it to comply.
+
+We will write a function that:
+
+* Remove all spaces
+
+* Upper cases all letters
+
+* Remove the punctuation characters `.` `,` `?` and `!`
+
+The result is the *plaintext* which will be encoded.
+
+---
+
+# Python functions
+
+Python functions start with the text `def` followed by the function name.
+
+```python
+def add(left, right):
+    return left + right
+
+def subtract(left, right):
+    return left - right
+```
+
+Round brackets, `(` and `)`, surround a comma separated list of
+function arguments. You can have as many arguments as you like.
+
+The function name and each argument is a python identifier.
+
+The line ends with a semi-colon, `:`, after which the behaviour of the
+function is described. The behaviour description must be indented
+relative to the `def`, and ends at the next line with the same
+indentation as the `def` line.
+
+A function can return a value to its caller with the `return` keyword.
+A function does not have to return a value.
+
+What do you think the above functions do?
+
+---
+
+# Exercise
+
+Write a function using the following prototype.
+
+```python
+def prepare(text):
+```
+
+This function will take arbitrary strings as input. We want it to
+return plaintext that only contains `A`-`Z`.
+
+Use pythons string functions to modify the text:
+
+* `text.upper()` will return `text` with all letter upper cased.
+
+* `text.replace('xxx', '')` returns `text` with the character sequence
+  xxx removed.
+
+---
+
+# Testing Your Code
+
+From `src/enigma.py` call `prepare()` on a message and print the output.
+
+* Does it look like you would expect?
+
+Run the following in the terminal. This will test your implementation
+with `exercise01/test_prepare.py`.
+
+```bash
+pytest
+```
+
+Did anything fail? Fix any issues and rerun `pytest`.
+
+Run the following in the terminal. This will prepare a longer message
+using your function:
+
+```bash
+python3 exercise01/main.py
+```
+
+How easy is it to identify the word boundaries?
+
+---
+
+# Committing Your Code
+
+When you have `prepare()` working, create a commit recording what
+you've done.
+
+```bash
+git add src/enigma.py
+git commit
+```
+
+The add command is used to stage the changes, collecting changes from
+multiple files into a single commit. We only need to add one file.
+
+The commit command creates a new commit.
+
+You will need to describe the changes in a commit message.
+
+After every exercise, commit your new code and any tests that you have
+added.
+
+---
+
+# Stretch Goal
+
+So far we've ignored digits (`0`-`9`). These would be quite important
+in a message.
+
+How can we accomodate them? Can you make the changes?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
+
+---
+
+# Next
+
+Merge the `exercise02` branch into your branch to pick up the next
+exercise.
+
+```bash
+git merge origin/exercise02
+```
