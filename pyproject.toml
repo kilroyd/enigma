@@ -1,0 +1,46 @@
+[project]
+name = "enigma"
+version = "0.1.0"
+description = "Coding Enigma"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[dependency-groups]
+lint = [
+    "ruff>=0.14.1",
+    ]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+dev=[
+    {include-group = "test"},
+    {include-group = "lint"},
+]
+
+[tool.ruff]
+required-version = ">=0.13.0"
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+combine-as-imports = true
+split-on-trailing-comma = false
+
+[tool.ruff.lint.mccabe]
+max-complexity = 25
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+testpaths = ["exercise*"]
+norecursedirs = [".git"]
+
+[tool.coverage.run]
+omit=["exercise*/*"]
