@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma
+
+---
+
+# Agenda
+
+1. Enigma
+2. Development Environment
+3. Source Control
+
+---
+
+# Enigma
+
+Enigma is a machine that scrambles text so that only people who know
+the encoding parameters are able to recover the original message. This
+type of device is known as a cipher machine. The subject exploring how
+to securely scramble messages is known as cryptography.
+
+The Enigma was used by Germany during World War II.
+
+This course will guide you to write Python that behaves in the same
+way as one of the original models, the M3.
+
+At the same time, we want to introduce you to different software
+engineering practices.
+
+---
+
+# Enigma components
+
+The Enigma is composed of:
+
+* a keyboard to enter text
+* a light panel which illuminates the encoded letter when a key is pressed
+* a plugboard
+* an entry rotor
+* 3 rotors
+* a reflector
+
+You computer will take the place of the keyboard and light panel. We
+will implement the behaviour of each of the components in software,
+allowing us to encode and decode text exactly as one of the original
+machines would have.
+
+---
+
+# Development Environment
+
+It's possible to write code using a simple text editor and a command
+line, with a compiler and some simple tools.
+
+An Integrated Development Environment brings together common tools
+that make it easier to develop code. An example of an IDE is [Visual
+Studio Code](https://code.visualstudio.com)
+
+They usually feature:
+* a code editor
+* syntax highlighting for the language
+* a debugger
+* source control
+
+Setting up your IDE can get quite involved. In this exercise we
+primarily want to use the code editor. Feel free to explore the IDE
+over the course, and try to make use of its features.
+
+Open your IDE now (if you haven't already), and point it at the enigma
+directory, and try to open a few of the files.
+
+---
+
+# Source Control
+
+* it's common to make mistakes
+
+* it may take a number of attempts to get something working
+
+* at the point we have things working as desired, we want to record
+  this state
+
+* this allows us to recover if we make a disastrous error.
+
+---
+
+# Git
+
+We will use git for source control.
+
+You can learn more about it at https://git-scm.com
+
+We will be using the very basics, and simply get familiar with using
+it on the command line.
+
+```bash
+git clone ...
+git add ...
+git commit ...
+git merge ...
+```
+
+There may be an integration in your Integrated Development Environment
+(IDE) that provides a nice GUI. It's still handy to be able to use the
+command line, which allows more control.
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
