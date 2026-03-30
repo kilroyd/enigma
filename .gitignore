@@ -1,2 +1,5 @@
 *~
 *.pyc
+
+# macOS Finder creates these
+.DS_Store
