@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma - Exercise 02
+
+---
+
+# Agenda
+
+1. Substitution ciphers
+2. Cracking subsitution ciphers
+3. Character representation
+4. Classes
+5. Exercise
+6. Testing
+
+---
+
+# Substitution ciphers
+
+A substitution cipher is a way of scrambling text. An example of a
+substitution cipher is to shift the alphabet by one character.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    BCDEFGHIJKLMNOPQRSTUVWXYZA
+This would be known as ROT1 (rotate 1). A more common variant is ROT13.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    NOPQRSTUVWXYZABCDEFGHIJKLM
+These are easy to remember. It's harder if the replacement is more random.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    QMXOPTSURLBECVGNDFAKHWJYIZ
+You could also use a phrase (with repeated letters omitted).
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    THEQUICKBROWNFXJMPSVLAZYDG
+
+---
+
+# Cracking substitution ciphers
+
+* Frequency analysis of symbols
+
+* Recognising letter patterns in words with repeated letters.
+
+* Recognising short words. a, i, the, and
+
+* Recognising common word endings. ing, ion, th, sh
+
+* Cribs - guessing a potential word
+
+https://www.subsolver.com/classic/
+
+---
+
+# Character representation in computer systems
+
+Like everything else, text on a computer is represented as a
+number. Each character is represented by an 8-bit
+byte. [ASCII](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg)
+describes the mapping from number to letter.
+
+A == 65, B == 66, ... Z == 90
+
+In this exercise it's useful to be able switch between the character and
+an integer.
+
+```python
+ord('A') == 60  # returns the integer associated with the character
+chr(60) == 'A'  # returns the character associated with the number.
+```
+
+---
+
+# Classes
+
+```python
+class Square:
+    def __init__(self, x):
+        self.x = x
+
+    def area(self):
+        return self.x * self.x
+
+    def circumference(self):
+        return 4 * self.x
+
+class Circle:
+    def __init__(self, r):
+        self.r = r
+
+    def area(self):
+        return math.pi * self.r * self.r
+
+    def circumference(self):
+        return 2 * math.pi * self.r
+
+s = Square(4)
+c = Circle(2)
+
+print("s has area {}".format(s.area()))
+print("c has area {}".format(c.area()))
+```
+
+---
+
+# Exercise
+
+Create a `SubstititionCipher` class that is able to encode a character.
+
+```python
+class SubsitutionCipher:
+    def __init__(self, init_string):
+        pass
+
+    def process(self, char):
+        pass
+```
+
+---
+
+# Testing Your Code
+
+Create `src/test_substitution_cipher.py` and add tests to check that
+`SubstitutionCipher` behaves as expected.
+
+---
+
+# Next
+
+Merge the `exercise03` branch into your branch to pick up the next
+exercise.
+
+```bash
+git merge origin/exercise03
+```
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

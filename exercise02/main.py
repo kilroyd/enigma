@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+# Tweak lookup path to find students code
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
+
+from enigma import SubstitutionCipher
+
+cipher = SubstitutionCipher("NOPQRSTUVWXYZABCDEFGHIJKLM")
+out = ""
+for c in "BANANA":
+    out = out + cipher.process(c)
+print("ROT13(BANANA) -> {}".format(out))
