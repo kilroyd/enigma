@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma - Exercise 03
+
+---
+
+# Agenda
+
+1. Enigma Rotors
+2. Enigma Internals
+3. Inverted Substitution Cipher 
+4. Exercise
+5. Testing
+
+---
+
+# Enigma Rotors
+
+The core of the Enigma are the rotors. These are cylinders with
+electrical contacts on the flat faces. Each face has 26 contacts, one
+for each letter. Inside the rotor, the electical contacts on one face
+are wired to different contacts on the other face. This effectively
+produces a substitution.
+
+---
+
+# Enigma Internals
+
+```
+UKW    R3    R2    R1   EKW      PB
+
++--+  +--+  +--+  +--+  +--+    +--+       Keyb
+|  |  |  |  |  |  |  |  |  |    |  |
+| +----~~----~~----~~----~~------~~------- 'A' ----  +ve
+| |   |  |  |  |  |  |  |  |    |  |                Batt
+| |   |  |  |  |  |  |  |  |    |  |
+| +----~~----~~----~~----~~------~~------> 'X' ----  -ve
+|  |  |  |  |  |  |  |  |  |    |  |
++--+  +--+  +--+  +--+  +--+    +--+       Lamp
+```
+
+PB - Plugboard. Swaps 10 selectable pairs of letters, and passes the
+others through unchanged.
+
+EKW - Entry rotor. Fixed position.
+
+R1 - First rotor. Swappable. Rotates on every keypress.
+
+R2, R3 - Further rotors. Swappable. Rotates when nudged by a notch on
+the previous rotor.
+
+UKW - Reflector. Fixed position. The reflector also has 26 contacts on
+its right hand face. These contacts are paired and wired together.
+
+---
+
+# Inverted Substitution Cipher
+
+After plaintext is encoded by a subsitution cipher, you want to be
+able to decode it. We want to be able to do this with the
+`SubstitutionCipher` class you have just written.
+
+To do this we need to calculate the `init_string` that undoes the
+original substitution, and then use that to instantiate a new
+`SubstitutionCipher`.
+
+This is also what we need to model the signal going back through the
+rotor after the reflector.
+
+Before trying to code this, try do an example.
+```
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+EFGHMNOPABCDIJKLUVXWYZQRST
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+??????????????????????????
+```
+
+---
+
+# Exercise
+
+Before we write the code, write some tests for it.
+
+Create a file `src/test_inverted.py`, and write some tests.
+
+---
+
+# Improve the test
+
+Modify the test to make sure that every letter is decoded correctly.
+
+Copy the test, but use a different initial `init_string`. Are some
+strings better than others to test?
+
+---
+
+# Implementation
+
+Create a function, `createInvertedCipher()`, that returns a
+`SubstitutionCipher` that inverts the `SubstitutionCipher` that is
+passed as an argument.
+
+```
+def createInvertedCipher(cipher):
+    init_string = "TODO"
+    return SubstitutionCipher(init_string)
+```
+
+---
+
+# Next
+
+When your test is passing, commit the changes.
+
+Merge the `exercise04` branch into your branch to pick up the next
+exercise.
+
+```bash
+git merge origin/exercise04
+```
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
