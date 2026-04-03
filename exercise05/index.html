@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma - Exercise 05
+
+---
+
+# Agenda
+
+1. Printing ciphertext
+2. Exercise
+
+---
+
+# Printing plaintext and ciphertext
+
+```
+RHUBARBBARBARABARBARBARIANBEARDS
+```
+
+The above is pretty hard to read. It's also hard to keep track of
+where you are in the text (if you were decoding by hand).
+
+The standard way to make this easier is to break the text into groups
+of 4 or 5 characters for printing.
+
+```
+RHUBA RBBAR BARAB ARBAR BARIA NBEAR DS
+```
+
+---
+
+# Exercise
+
+Implement a function, `quintet()` that accepts text as an argument, and
+returns the same text in groups of 5 characters. Assume that the input
+text does not contain any spaces.
+
+```
+def quintet(text):
+    return text
+```
+
+Implement a test before you start implementing the function.
+
+---
+
+# Next
+
+When your test is passing, commit the changes.
+
+Merge the `exercise06` branch into your branch to pick up the next
+exercise.
+
+```bash
+git merge origin/exercise06
+```
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
