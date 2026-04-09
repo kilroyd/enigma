@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma - Exercise 07
+
+---
+
+# Agenda
+
+1. Plan for Implementing Rotor
+2. Exercise
+
+---
+
+# Plan for Implementing Rotor
+
+When we implement the rotor, we want to take account of:
+
+* The signal passes through the rotor twice. Once from the entry rotor
+  towards the reflector, and another time in the opposite
+  direction. The second time, the transformation is the inverse of the
+  first.
+
+* The rotor position will change.
+
+The rotor class will record the current position. It will have two
+cipher classes, one for the forward direction, and one for the
+reverse. We will also have the cipher classes account for the rotor
+position changing.
+
+In this exercise we will implement this new cipher class, the
+`RotatingCipher`.
+
+---
+
+# Exercise
+
+```python
+class RotatingCipher:
+    def __init__(self, cipher, position):
+        pass
+
+    def rotate(self):
+        pass
+
+    def process(self, char):
+        pass
+```
+
+The `RotatingCipher` will be initialized with a `SubstitutionCipher`
+and an initial position, indicated by a letter (the rotor position
+visible in the window). Both these can be stored in class variables.
+
+The `rotate()` member function should increment the stored position of
+the rotor. You can call the `rotate()` function you implemented
+previously to calculate the new position.
+
+---
+
+# Exercise
+
+```python
+class RotatingCipher:
+    def process(self, char):
+        pass
+```
+
+```
+                   |
+Fixed ref          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Rotor ref in   ABCDEFGHIJKLMNOPQRSTUVWXYZABCD
+Subst          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Rotor ref out  ABCDEFGHIJKLMNOPQRSTUVWXYZABCD
+Fixed ref          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+```
+
+The above figure attempts to show what we need to do in the
+`process()` member function that will encode in input character. The
+first and last lines identify the fixed letter positions on the
+machine, with the `|` indicating the position of the window at
+`A`. The rotor is in position `E`.
+
+The input to the rotor is in the fixed reference position. To pass it
+through the `SubstitutionCipher` we must first account for the rotor's
+position. We can do this with the `rotate()` function implemented
+earlier.
+
+In the above example, how many positions do we need to rotate by?
+
+The ouput of `SubstitionCipher` is also in the rotor's reference. So
+we similarly need to account for the rotor's position and revert to
+the fixed reference.
+
+---
+
+# Exercise
+
+Create tests for the `RotatingCipher`, and then implement it.
+
+---
+
+# Next
+
+When your test is passing, commit the changes.
+
+Merge the `exercise08` branch into your branch to pick up the next
+exercise.
+
+```bash
+git merge origin/exercise08
+```
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
