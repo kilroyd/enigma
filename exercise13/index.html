@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Coding Enigma - Exercise 13
+
+---
+
+# Agenda
+
+1. Command Line
+2. Exercise Part I
+3. Notches and Latches
+4. Exercise Part II
+
+---
+
+# Command Line
+
+We want to be able to call `src/enigma.py` on the command line,
+specifying the initial position of the machine, and message to
+encrypt/decrypt.
+
+Create a `main()` function and call it from the `if __name__ ==
+"__main__"` check.
+
+Use python's
+[argparse](https://docs.python.org/3/library/argparse.html) library to
+specify how to handle the command line.
+
+---
+
+# Flag arguments
+
+The meaning of the argument is determined by the flag.
+
+Short flags are single characters prefixed by `-`. e.g. `-v`
+
+Long flags are short words prefixed by `--`. e.g. `--verbose`
+
+These can set (or clear) boolean options, or take a value from the
+next argument.
+
+* `--verify`
+* `--no-verify`
+* `--name Jack`
+
+---
+
+# Positional arguments
+
+The meaning of the argument is determined by the position on the
+command line. Usually there will only be one or two positional
+arguments specifying a filename, or text to operate on.
+
+* `cp a.txt b.txt`
+
+---
+
+# Exercise
+
+Identify the parameters that you need to setup an Enigma M3, and
+decide how you specify these on the command line. Include a way to
+pass in message text to encode and decode.
+
+Implement the command line parsing, setup the EnigmaM3 class, and
+encode/decode the message.
+
+Print the output to the console.
+
+---
+
+# Next
+
+Commit `src/enigma.py` and any tests you have created.
+
+This is the end of the guide. There are some obvious things that you
+can look at implementing to complete the EnigmaM3:
+
+* Implement the plugboard. How will you specify letter pairs on the
+  command line?
+
+* Implement the index ring - the letters on the outer part of the
+  rotor can be rotated relative to the wiring.
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
