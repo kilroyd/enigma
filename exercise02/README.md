@@ -1,10 +1,63 @@
-Coding Enigma - Exercise 2
----
+# Coding Enigma - Exercise 2
 
 In this exercise we will create a class to handle substitution
 ciphers.
 
-## Python classes
+## Background
+
+### Substitution ciphers
+
+A substitution cipher is a way of scrambling text. An example of a
+substitution cipher is to shift the alphabet by one character.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    BCDEFGHIJKLMNOPQRSTUVWXYZA
+This would be known as ROT1 (rotate 1). A more common variant is ROT13.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    NOPQRSTUVWXYZABCDEFGHIJKLM
+These are easy to remember. It's harder if the replacement is more random.
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    QMXOPTSURLBECVGNDFAKHWJYIZ
+You could also use a phrase (with repeated letters omitted).
+
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    THEQUICKBROWNFXJMPSVLAZYDG
+
+### Cracking substitution ciphers
+
+* Frequency analysis of symbols
+
+* Recognising letter patterns in words with repeated letters.
+
+* Recognising short words. a, i, the, and
+
+* Recognising common word endings. ing, ion, th, sh
+
+* Cribs - guessing a potential word
+
+Have a go at cracking a substitution cipher on
+https://www.subsolver.com/classic/
+
+### Character representation in computer systems
+
+Like everything else, text on a computer is represented as a
+number. Each character is represented by an 8-bit
+byte. [ASCII](https://commons.wikimedia.org/wiki/File:ASCII-Table-wide.svg)
+describes the mapping from number to letter.
+
+A == 65, B == 66, ... Z == 90
+
+In this exercise it's useful to be able switch between the character and
+an integer.
+
+```python
+ord('A') == 60  # returns the integer associated with the character
+chr(60) == 'A'  # returns the character associated with the number.
+```
+
+### Python classes
 
 The keyword `class` introduces a class.
 
@@ -47,7 +100,7 @@ the function to access class members.
 The `__init__()` function is a special function known as a
 constructor. It runs when an object of that class type is instantiated
 (created). This function should be used to assign initial values to
-all member variables. Assigning a value to a class variable all that
+all member variables. Assigning a value to a class variable is all that
 you need to do to create that variable.
 
 In the above code, `s = Square(4)`, creates an instance of the Square
@@ -55,12 +108,14 @@ class, calling the constructor with the argument 4. The instance is
 assigned to the variable `s`. `s.area()` calls the `Square` member
 function `area()`. Within that call `self` refers to the object `s`.
 
-## Copy template code
+## Exercise
+
+### Copy template code
 
 Copy the template `SubstitutionCipher` class from
 `exercise02/template.py` into `src/enigma.py`.
 
-## Usage
+### Usage
 
 How will this class be used?
 
@@ -82,7 +137,7 @@ that we want encoded.
 The constructor needs to setup the class data such that the
 `process()` call can do the encoding.
 
-## init_string
+### init_string
 
 In the template `SubstitutionCipher.__init__()` we have an
 `init_string` argument. This string describes the substitution. The
@@ -100,7 +155,7 @@ SubsitutionCipher("ZYXWVUTSRQPONMLKJIHGFEDCBA")  # -> out
 This notation is chosen because it is a compact way to describe the
 substitution.
 
-## Fill in the constructor
+### Fill in the constructor
 
 The data that you want to store in the class depends on how you plan
 on doing the substitution. There are multiple ways you could do this.
@@ -123,12 +178,12 @@ invalid condition.
 assert x == 4
 ```
 
-## Fill in the process member function
+### Fill in the process member function
 
 Make the `process()` member function return the encoded version of the
 input character.
 
-## Useful python functions
+### Useful python functions
 
 ```python
 len(string)   # return the number of characters in string
@@ -137,7 +192,7 @@ ord(char)     # return the ASCII value of a character
 chr(ascii)    # return the character associated with an ASCII value
 ```
 
-## Unit tests
+### Unit tests
 
 Create a new file `src/test_substitution_cipher.py`. The `test_`
 prefix indicates that this file will contain tests.
