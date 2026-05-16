@@ -1,16 +1,21 @@
-Coding Enigma - Exercise 11
----
+# Coding Enigma - Exercise 11
 
 In this exercise we will create factory functions for rotors and
 reflectors.
 
-## Factories
+## Background
+
+### Factories
+
+Factories are used to simplify the creation of some classes. We will
+use them to encapsulate the configuration of the Enigma components.
 
 We want to be able to create named rotors that match those available
-for the Enigma M3. The factory functions will encapsulate the
-configuration of the classes.
+for the Enigma M3.
 
-## Copy template code
+## Exercise
+
+### Copy template code
 
 Copy the template code from `exercise11/template.py` into
 `src/enigma.py`.
@@ -18,7 +23,7 @@ Copy the template code from `exercise11/template.py` into
 This includes code for the functions `EntryRotorFactory`,
 `RotorFactory`, and `ReflectorFactory`.
 
-## Usage
+### Usage
 
 How will these be used?
 
@@ -28,31 +33,32 @@ r1 = RotorFactory("IV", 'A')
 ukw = ReflectorFactory("B", 'A')
 ```
 
-## Components
+### Components
 
 The components that we need to create, and their configuration are
 listed below.
 
-Type        Name    Wiring                      Turnover
-EntryRotor  ABC     ABCDEFGHIJKLMNOPQRSTUVWXYZ  -
-EntryRotor  QWERTZ  QWERTZUIOASDFGHJKPYXCVBNML  -
-Rotor       I       EKMFLGDQVZNTOWYHXUSPAIBRCJ  Q
-Rotor       II      AJDKSIRUXBLHWTMCQGZNPYFVOE  E
-Rotor       III     BDFHJLCPRTXVZNYEIWGAKMUSQO  V
-Rotor       IV      ESOVPZJAYQUIRHXLNFTGKDCMWB  J
-Rotor       V       VZBRGITYUPSDNHLXAWMJQOFECK  Z
-Rotor       VI      JPGVOUMFYQBENHZRDKASXLICTW  Z, M
-Rotor       VII     NZJHGRCXMYSWBOUFAIVLPEKQDT  Z, M
-Rotor       VIII    FKQHTLXOCBJSPDZRAMEWNIUYGV  Z, M
-Reflector   B       YRUHQSLDPXNGOKMIEBFZCWVJAT	-	 	 
-Reflector   C       FVPJIAOYEDRZXWGCTKUQSBNMHL  -
+| Type        | Name    | Wiring                      | Turnover |
+| ----------- | ------- | --------------------------- | -------- |
+| EntryRotor  | ABC     | ABCDEFGHIJKLMNOPQRSTUVWXYZ  | - |
+| EntryRotor  | QWERTZ  | QWERTZUIOASDFGHJKPYXCVBNML  | - |
+| Rotor       | I       | EKMFLGDQVZNTOWYHXUSPAIBRCJ  | Q |
+| Rotor       | II      | AJDKSIRUXBLHWTMCQGZNPYFVOE  | E |
+| Rotor       | III     | BDFHJLCPRTXVZNYEIWGAKMUSQO  | V |
+| Rotor       | IV      | ESOVPZJAYQUIRHXLNFTGKDCMWB  | J |
+| Rotor       | V       | VZBRGITYUPSDNHLXAWMJQOFECK  | Z |
+| Rotor       | VI      | JPGVOUMFYQBENHZRDKASXLICTW  | Z, M |
+| Rotor       | VII     | NZJHGRCXMYSWBOUFAIVLPEKQDT  | Z, M |
+| Rotor       | VIII    | FKQHTLXOCBJSPDZRAMEWNIUYGV  | Z, M |
+| Reflector   | B       | YRUHQSLDPXNGOKMIEBFZCWVJAT  | - |	 	 
+| Reflector   | C       | FVPJIAOYEDRZXWGCTKUQSBNMHL  | - |
 
 Also see [M3 on CryptoMuseum](https://www.cryptomuseum.com/crypto/enigma/m3/index.htm)
 
 Add tests to `src/test_factories.py` that verify that you can create each
 of the named components, and they return the correct class.
 
-## Next
+### Next
 
 Once the tests are passing, commit `src/enigma.py` and `src/test_factories.py`.
 
