@@ -1,9 +1,42 @@
-Coding Enigma - Exercise 6
----
+# Coding Enigma - Exercise 6
 
 In this exercise we will implement a function to help us rotate the alphabet.
 
-## Copy template
+## Background
+
+### Rotor
+
+The rotors are cylinders. As keys are pressed the rotors turn.
+
+On the outside of each rotor, the alphabet is printed in
+sequence. When placed in the machine, a single letter for each rotor
+is visible through a window. This defines the position of the rotor.
+
+Since the rotor is a cylinder, once we reach the letter 'Z' the next
+letter will be 'A'.
+
+```
+             <--
+           Z  A   
+      X Y        B C
+    W                 D
+    V                 E
+  U                     F
+  T                     G
+  S                     H
+    R                 I
+    Q                 J
+      P O        L K
+           N  M
+          -->
+```
+
+## Exercise
+
+Write a function to return the letter we will be on after rotating N
+positions.
+
+### Copy template
 
 Copy the template function from `exercise06/template.py` into
 `src/enigma.py`.
@@ -13,7 +46,7 @@ def rotate(char, positions):
     return char
 ```
 
-## Usage
+### Usage
 
 How will this be used?
 
@@ -26,16 +59,18 @@ c5 = rotate('Z', 5)   # E
 c6 = rotate('Z', -1)  # Y
 ```
 
-## Unit tests
+The function should return a character.
+
+### Unit tests
 
 Create a new file `src/test_rotate.py` and setup some tests.
 
-## Implementation
+### Implementation
 
 Implement the function. You should only need some addition,
 subtraction, and the use of `ord` and `chr`.
 
-## Next
+### Next
 
 Once the tests are passing, commit `src/enigma.py` and
 `src/test_rotate.py`.
