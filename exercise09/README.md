@@ -1,15 +1,29 @@
-Coding Enigma - Exercise 9
----
+# Coding Enigma - Exercise 9
 
 In this exercise we will put together the code to handle an
 Enigma entry rotor.
 
-## Copy template code
+## Background
+
+### Entry Rotor
+
+The entry rotor is where the wiring from the keyboard enters the
+series of rotors. On commercial Enigma machines it was setup to do an
+extra substitution. On the Enigma M3 this is actually a no-op, but
+we'll implement it for completeness.
+
+## Exercise
+
+We will make the `EntryRotor` class very similar to the `Rotor` class,
+even though it does not have all the same functionality. Using a
+similar structure potentially allows us to write neater code.
+
+### Copy template code
 
 Copy the template class `EntryRotor` from `exercise09/template.py` into
 `src/enigma.py`.
 
-## Usage
+### Usage
 
 How will this be used?
 
@@ -20,12 +34,21 @@ n = R.invCipher().process('C')
 R.rotate()
 ```
 
-## Implementation
+### Testing
 
-Create a new file `src/test_entry_rotor.py`. Add some simple tests,
-and then complete the `EntryRotor` class as described.
+Create a new file `src/test_entry_rotor.py`. Add tests to check:
 
-## Next
+* `encCipher()` returns an instance of `SubstitutionCipher`.
+* `invCipher()` returns an instance of `SubstitutionCipher`.
+
+### Implementation
+
+Complete the `EntryRotor` class.
+
+For the `EntryRotor` use `SubstitutionCipher`s and leave `rotate()`
+empty.
+
+### Next
 
 Once the tests are passing, commit `src/enigma.py` and
 `src/test_entry_rotor.py`.
