@@ -1,14 +1,55 @@
-Coding Enigma - Exercise 12
----
+# Coding Enigma - Exercise 12
 
 In this exercise we will create a class representing an Enigma M3.
 
-## Copy template code
+## Background
+
+### Enigma M3
+
+The Enigma M3 is composed of:
+
+* a keyboard
+* a plugboard
+* an entry rotor
+* three rotors
+* a reflector
+* a lamp board for output
+
+We don't need to implement the keyboard or the lamp board. We'll start
+by implementing everything except the plugboard.
+
+### Notches and Latches
+
+In order to implement how the rotors move, it's helps to know how it
+works mechanically. In the rest of this section, imagine the rotors
+sitting in the machine, and you are the operator at the keyboard.
+
+On the right side of each rotor is the ratchet mechanism. On the left
+side of each rotor are the notches.
+
+There are 3 spring loaded latches. Two are wide and positioned:
+
+* across the left and middle rotor. This will engage the left rotor
+ratchet, and the middle rotor notch.
+
+* across the middle and right rotor. This will engage the middle rotor
+ratchet and the right rotor notch.
+
+The third rotor is narrow, and only engages the right rotor's ratchet.
+
+Where a latch rides on the left side of a rotor, the lack of a notch
+prevents the latch engaging with the next rotor's ratchet.
+
+[Enigma Stepping on Wikipedia, with a diagram](https://en.wikipedia.org/wiki/Enigma_machine#Stepping)
+
+## Exercise
+
+### Copy template code
 
 Copy the template code from `exercise12/template.py` into
 `src/enigma.py`.
 
-## Usage
+### Usage
 
 How will this be used?
 
@@ -17,7 +58,40 @@ m3 = EnigmaM3(["I", "II", "III"], 'B', "ABC")
 m3.process('A')
 ```
 
-## Next
+### Part I
+
+Fill out the `__init__` function. Create an instance of each component
+using the relevant factory functions.  Make sure that each rotor is
+initialised with the appropriate position.
+
+In the `process()` function, feed the input character through the
+appropriate rotor ciphers in the right sequence: entry rotor enc,
+right rotor enc, middle rotor enc, left rotor enc, reflector enc, left
+rotor inv, middle rotor inv, right rotor inv, entry rotor inv.
+
+We'll add rotation of the rotors next.
+
+### Part II
+
+Python tests exist in the exercise12 directory. Implementing the rotor
+movement should fix the tests.
+
+In the `process()` function, rotate the rightmost rotor on every
+character before enciphering each character. This should fix
+`test_m3_rotate_right_rotor_only`.
+
+When the notch on a rotor is aligned, rotate the rotor to it's
+left. This should fix `test_m3_single_rotate`.
+
+When the notch on a rotor is aligned, rotate the rotor with the
+notch. This should fix `test_m3_double_rotate`. Note that this doesn't
+affect the right rotor because it rotates on every keypress - make
+sure it doesn't rotate twice; nor does this affect the left rotor
+because there isn't a latch above it's
+notch. `test_m3_left_rotor_notch` will pass while the the left rotor
+doesn't rotate when it's notch is alilgned.
+
+### Next
 
 Once the tests are passing, commit `src/enigma.py`.
 

@@ -80,7 +80,7 @@ There are 3 spring loaded latches. Two are wide and positioned:
 ratchet, and the middle rotor notch.
 
 * across the middle and right rotor. This will engage the middle rotor
-ratcher and the right rotor notch.
+ratchet and the right rotor notch.
 
 The third rotor is narrow, and only engages the right rotor's ratchet.
 
@@ -103,12 +103,13 @@ character before enciphering each character. This should fix
 When the notch on a rotor is aligned, rotate the rotor to it's
 left. This should fix `test_m3_single_rotate`.
 
-When the notch on a rotor is aligned, rotate the rotor. This should
-fix `test_m3_double_rotate`. Note that this doesn't affect the right
-rotor because it rotates on every keypress - make sure it doesn't
-rotate twice; nor does the left rotor because there isn't a latch
-above it's notch. `test_m3_left_rotor_notch` will pass while the the
-left rotor doesn't rotate when it's notch is alilgned.
+When the notch on a rotor is aligned, rotate the rotor with the
+notch. This should fix `test_m3_double_rotate`. Note that this doesn't
+affect the right rotor because it rotates on every keypress - make
+sure it doesn't rotate twice; nor does this affect the left rotor
+because there isn't a latch above it's
+notch. `test_m3_left_rotor_notch` will pass while the the left rotor
+doesn't rotate when it's notch is alilgned.
 
 ---
 
