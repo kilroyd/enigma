@@ -1,10 +1,29 @@
-Coding Enigma - Exercise 5
----
+# Coding Enigma - Exercise 5
 
 In this exercise we will implement a helper to output plaintext and
 ciphertext in groups of 5 characters.
 
-## Copy template code
+## Background
+
+### Printing plaintext and ciphertext
+
+```
+RHUBARBBARBARABARBARBARIANBEARDS
+```
+
+The above is pretty hard to read. It's also hard to keep track of
+where you are in the text (if you were decoding by hand).
+
+The standard way to make this easier is to break the text into groups
+of 4 or 5 characters for printing.
+
+```
+RHUBA RBBAR BARAB ARBAR BARIA NBEAR DS
+```
+
+## Exercise
+
+### Copy template code
 
 Copy the template code from `exercise05/template.py` into
 `src/enigma.py`.
@@ -14,7 +33,7 @@ def quintet(text):
     pass
 ```
 
-## Usage
+### Usage
 
 How will this be used?
 
@@ -22,16 +41,18 @@ How will this be used?
 print("Plaintext:  {}".format(quintet(plaintext)))
 ```
 
-## Create Tests
+The function should return a modified string.
 
-Create `src/test_quintet.py` and add a few tests defining how you
+### Create Tests
+
+Create `src/test_quintet.py` and add a few tests showing how you
 expect the function to behave.
 
 ## Implementation
 
 Implement the `quintet()` function.
 
-## Useful python
+### Useful python
 
 Use slices to refer to consecutive elements in a list or string.
 
@@ -51,7 +72,7 @@ str3 = str1 + " " + str2
 str4 = " ".join([str1, str2])
 ```
 
-## Next
+### Next
 
 Once the tests are passing, commit `src/enigma.py` and
 `src/test_quintet.py`.
