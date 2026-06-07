@@ -1,0 +1,61 @@
+Dependencies between exercises
+
+exercise: list of dependencies
+description
+
+---
+
+exercise01: -
+prepare()
+
+exercise02: -
+SubstitutionCipher
+
+exercise03: exercise02
+createInvertedCipher()
+
+exercise04: exercise02
+processMessage()
+
+exercise05: -
+quintet()
+
+exercise06: -
+rotate()
+
+exercise07: exercise02
+RotatingCipher
+
+exercise08: exercise07
+Rotor
+
+exercise09: exercise02
+EntryRotor
+
+exercise10: exercise07
+Reflector
+
+exercise11: exercise08 exercise09 exercise10
+Factories
+
+exercise12: exercise04 exercise11
+EnigmaM3
+
+exercise13: exercise12
+command line
+
+---
+
+Most parallel order:
+
+1. exercise01 exercise02 exercise05 exercise06
+
+2. exercise03 exercise04 exercise07 exercise09
+
+3. exercise08 exercise10
+
+4. exercise11
+
+5. exercise12
+
+6. exercise13
