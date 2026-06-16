@@ -89,6 +89,29 @@ new_text = text.upper()
 The functions that are useful for implementing `prepare()` are
 `upper()` and `replace()`.
 
+## Test
+
+Tests for this function are available in
+`exercise01/test_prepare.py`. Run the tests with:
+
+```
+pytest
+```
+
+If the tests fail, double check and fix your implementation.
+
+## Commit
+
+Once the tests are passing, commit your changes.
+
+```
+git add src/enigma.py
+git commit
+```
+
+When running `git commit` you will be asked to write a commit
+message. See the next section about writing good commit messages.
+
 ## Git commit messages
 
 A commit message is used to describe what changes you are making. This
