@@ -39,7 +39,7 @@ max-complexity = 25
 convention = "google"
 
 [tool.pytest.ini_options]
-testpaths = ["exercise*"]
+testpaths = ["src", "exercise*"]
 norecursedirs = [".git"]
 
 [tool.coverage.run]
