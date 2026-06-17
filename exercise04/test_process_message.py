@@ -8,20 +8,20 @@ from enigma import SubstitutionCipher, processMessage
 from unittest.mock import Mock, call
 
 def test_process_message():
-    text = "abracadabra"
+    text = "ABRACADABRA"
     cipher = SubstitutionCipher("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     cipher.process = Mock(return_value='x')
     out = processMessage(cipher, text)
-    expected = [call('a'),
-                call('b'),
-                call('r'),
-                call('a'),
-                call('c'),
-                call('a'),
-                call('d'),
-                call('a'),
-                call('b'),
-                call('r'),
-                call('a')]
+    expected = [call('A'),
+                call('B'),
+                call('R'),
+                call('A'),
+                call('C'),
+                call('A'),
+                call('D'),
+                call('A'),
+                call('B'),
+                call('R'),
+                call('A')]
     assert cipher.process.call_args_list == expected
     assert out == "xxxxxxxxxxx"
