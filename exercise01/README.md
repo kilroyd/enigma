@@ -86,8 +86,8 @@ new_text = text.upper()
 
 `new_text` will be a variable that is also a string.
 
-The functions that are useful for implementing `prepare()` are
-`upper()` and `replace()`.
+Functions that are useful for implementing `prepare()` are
+`upper()`, `replace()`, `isalpha()`.
 
 ## Test
 
