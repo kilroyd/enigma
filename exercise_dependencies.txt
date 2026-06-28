@@ -23,7 +23,7 @@ quintet()
 exercise06: -
 rotate()
 
-exercise07: exercise02
+exercise07: exercise02 exercise06
 RotatingCipher
 
 exercise08: exercise07
