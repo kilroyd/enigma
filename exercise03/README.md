@@ -113,6 +113,9 @@ Add a test with a different initial `init_string`.
 
 ### Fill in the function
 
+This function will return a `SubstitionCipher` class instance. You
+implemented `SubstitutionCipher` in exercise02.
+
 Have a think about how you will implement the function.
 
 How did you do it by hand? Write down the steps in English. Then try to
