@@ -51,10 +51,15 @@ Identify the parameters that you need to setup an Enigma M3, and
 decide how you specify these on the command line. Include a way to
 pass in message text to encode and decode.
 
-Implement the command line parsing, setup the EnigmaM3 class, and
-encode/decode the message.
+Implement the command line parsing, setup the `EnigmaM3` class, and
+encode/decode the message. This will use code that you've implemented
+in previous exercises. `EnigmaM3` was implemented in exercise12. We
+should use `prepare()` from exercise01 to sanitise the input message
+and `processMessage()` from exercise04 to encode/decode the whole
+message.
 
-Print the output to the console.
+Print the output to the console. Use `quintet()` implemented in
+exercise05 to format the output.
 
 ## Next
 
