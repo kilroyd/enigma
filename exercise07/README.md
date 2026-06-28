@@ -62,8 +62,8 @@ visible in the window). Both these can be stored in class variables.
 ### Behaviour of rotate()
 
 The `rotate()` member function should increment the stored position of
-the rotor. You can call the `rotate()` function you implemented
-previously to calculate the new position.
+the rotor. Use the `alpha_rotate()` function you implemented
+in exercise06 to calculate the new position.
 
 ### Behaviour of process()
 
@@ -78,14 +78,14 @@ Fixed ref          ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 The above figure attempts to show what we need to do in the
 `process()` member function that will encode in input character. The
-first and last lines identify the fixed letter positions on the
+first and last lines identify the fixed letter positions on the Enigma
 machine, with the `|` indicating the position of the window at
 `A`. The rotor is in position `E`.
 
-The input to the rotor is in the fixed reference position. To pass it
-through the `SubstitutionCipher` we must first account for the rotor's
-position. We can do this with the `rotate()` function implemented
-earlier.
+The input to the rotor `process()` function is in the fixed reference
+position. To pass it through the `SubstitutionCipher` we must first
+account for the rotor's position. We can do this with the
+`alpha_rotate()` function implemented in exercise06.
 
 In the above example, how many positions do we need to rotate by?
 
