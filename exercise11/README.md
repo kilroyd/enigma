@@ -20,7 +20,7 @@ for the Enigma M3.
 Copy the template code from `exercise11/template.py` into
 `src/enigma.py`.
 
-This includes code for the functions `EntryRotorFactory`,
+This includes skeleton code for the functions `EntryRotorFactory`,
 `RotorFactory`, and `ReflectorFactory`.
 
 ### Usage
@@ -36,7 +36,9 @@ ukw = ReflectorFactory("B", 'A')
 ### Components
 
 The components that we need to create, and their configuration are
-listed below.
+listed below. The classes that we need to use, `EntryRotor`, `Rotor`
+and `Reflector` were implemented in exercise08, exerise09, and
+exercise10.
 
 | Type        | Name    | Wiring                      | Turnover |
 | ----------- | ------- | --------------------------- | -------- |
