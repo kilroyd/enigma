@@ -1,4 +1,4 @@
-def rotate(char, positions):
+def alpha_rotate(char, positions):
     """We want to be able to rotate the alphabet as if on a wheel. The
     position after 'Z' is 'A', and the position before 'A' is 'Z'.
 

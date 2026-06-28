@@ -8,8 +8,8 @@ sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__f
 from enigma import rotate
 
 for i in range(26):
-    c = rotate('G', i)
+    c = alpha_rotate('G', i)
     print("G rotates {} is {}".format(i, c))
 for i in range(26):
-    c = rotate('G', -i)
+    c = alpha_rotate('G', -i)
     print("G rotated {} is {}".format(-i, c))
