@@ -54,8 +54,24 @@ cd enigma
 * Open `intro/README.md` for a guide to get familiar with the tools we
   will be using.
 
-* For each exercise there will be a similar presentation and guide in
-  `index.html` and `README.md` in the `exerciseXX` directory.
+* Each exercise in an `exerciseXX` directory contains:
+
+  * a presentation in `index.html` introducing the background and
+    outline of the exercise. This can be used when a group of students
+    are doing the exercise together.
+
+  * a `README.md` going into more detail. It should be possible for
+    students working on their own to just refer to these files.
+
+  * a `main.py` file demonstrating how the code the exercise is
+    intended to produce will be called. This can be used as a basic
+    test by running `exerciseXX/main.py` from a terminal.
+
+  * a `template.py` file containing a skeleton function or class that
+    is intended to be copied to `src/enigma.py`. It contains some
+    documentation about what needs to be implemented. It effectively
+    defines the interface that the student must adhere to in their
+    implementation.
 
 # References
 
