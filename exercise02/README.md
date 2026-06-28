@@ -59,9 +59,12 @@ chr(60) == 'A'  # returns the character associated with the number.
 
 ### Python classes
 
-The keyword `class` introduces a class.
+The keyword `class` introduces a class. A class is a user defined data
+type that can be used in a similar way to Python's native data types:
+integers, strings, Lists, etc
 
 ```python
+# Define a Square type which can return the area and circumference.
 class Square:
     def __init__(self, x):
         self.x = x
@@ -72,6 +75,7 @@ class Square:
     def circumference(self):
         return 4 * self.x
 
+# Define a Cirvle type which can return the area and circumference.
 class Circle:
     def __init__(self, r):
         self.r = r
@@ -82,8 +86,8 @@ class Circle:
     def circumference(self):
         return 2 * math.pi * self.r
 
-s = Square(4)
-c = Circle(2)
+s = Square(4) # s is a Square with side length 4
+c = Circle(2) # c is a Circle of radius 2
 
 print("s has area {}".format(s.area()))
 print("c has area {}".format(c.area()))
