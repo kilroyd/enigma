@@ -42,7 +42,7 @@ Copy the template function from `exercise06/template.py` into
 `src/enigma.py`.
 
 ```
-def rotate(char, positions):
+def alpha_rotate(char, positions):
     return char
 ```
 
@@ -51,19 +51,19 @@ def rotate(char, positions):
 How will this be used?
 
 ```python
-c1 = rotate('A', 1)   # B
-c2 = rotate('A', 5)   # F
-c3 = rotate('A', -1)  # Z
-c4 = rotate('Z', 1)   # A
-c5 = rotate('Z', 5)   # E
-c6 = rotate('Z', -1)  # Y
+c1 = alpha_rotate('A', 1)   # B
+c2 = alpha_rotate('A', 5)   # F
+c3 = alpha_rotate('A', -1)  # Z
+c4 = alpha_rotate('Z', 1)   # A
+c5 = alpha_rotate('Z', 5)   # E
+c6 = alpha_rotate('Z', -1)  # Y
 ```
 
 The function should return a character.
 
 ### Unit tests
 
-Create a new file `src/test_rotate.py` and setup some tests.
+Create a new file `src/test_alpha_rotate.py` and setup some tests.
 
 ### Implementation
 
