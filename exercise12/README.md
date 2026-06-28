@@ -61,8 +61,9 @@ m3.process('A')
 ### Part I
 
 Fill out the `__init__` function. Create an instance of each component
-using the relevant factory functions.  Make sure that each rotor is
-initialised with the appropriate position.
+using the relevant factory functions (implemented in exercise11).
+Make sure that each rotor is initialised with the appropriate
+position.
 
 In the `process()` function, feed the input character through the
 appropriate rotor ciphers in the right sequence: entry rotor enc,
